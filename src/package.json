@@ -1,0 +1,16 @@
+{
+  "name": "listener",
+  "version": "1.0.0",
+  "description": "listens to postgres notifies on market updates and broadcasts via socketcluster",
+  "main": "pglistener.js",
+  "scripts": {
+    "start": "sleep 5 && node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "6.1.2",
+    "socketcluster-client": "^14.2.2",
+    "underscore": "^1.9.1"
+  }
+}
