@@ -11,6 +11,7 @@
   "dependencies": {
     "pg": "6.1.2",
     "socketcluster-client": "^14.2.2",
-    "underscore": "^1.9.1"
+    "underscore": "^1.9.1",
+    "http": "0.0.1-security"
   }
 }

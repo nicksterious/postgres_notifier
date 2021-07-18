@@ -4,9 +4,20 @@ var num_connections = process.env.SOCKETCLUSTER_NUM_CONNECTIONS || 25;
 
 var pg = require('pg');
 var _ = require("underscore");
+const http = require("http");
 var SocketCluster = require('socketcluster-client')
 
 var sockets = [];
+
+const httpRequestListener = function(req, res) {
+    res.writeHead(200);
+    res.end( sockets.length.toString() );
+};
+
+const httpServer = http.createServer(httpRequestListener);
+httpServer.listen(8181);
+
+
 for (i=0; i<num_connections; i++) {
     sockets[i] = SocketCluster.connect({
 	hostname: process.env.SOCKETCLUSTER_HOST || "socketcluster",
