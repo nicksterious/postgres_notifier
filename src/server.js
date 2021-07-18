@@ -3,7 +3,6 @@ var connectionString = process.env.DATABASE_URL || 'postgres://postgres:examplep
 var num_connections = process.env.SOCKETCLUSTER_NUM_CONNECTIONS || 25;
 
 var pg = require('pg');
-var _ = require("underscore");
 const http = require("http");
 var SocketCluster = require('socketcluster-client')
 
