@@ -56,7 +56,9 @@ pg.connect(connectionString, function(err, client) {
 	    		    tchannel.unsubscribe();
 	    		    tchannel.off();
 			    tchannel.destroy();
-	    		    // console.log(msg.channel + ": " + msg.payload);
+	    		    if (process.env.DEBUG) { 
+				console.log(msg.channel + ": " + msg.payload);
+			    }
 	    		});
 	    	    });
     		}
@@ -67,7 +69,9 @@ pg.connect(connectionString, function(err, client) {
 	    		    tchannel.unsubscribe();
 	    		    tchannel.off();
 			    tchannel.destroy();
-	    		    // console.log(msg.channel + ": " + msg.payload);
+			    if (process.env.DEBUG) { 
+	    		    	console.log(msg.channel + ": " + msg.payload);
+			    }
 	    		});
 	    	    });
 	        }
