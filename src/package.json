@@ -9,8 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "http": "0.0.1-security",
+    "mysql": "^2.18.1",
     "pg": "6.1.2",
-    "socketcluster-client": "^14.2.2",
-    "http": "0.0.1-security"
+    "socketcluster-client": "^14.2.2"
   }
 }
