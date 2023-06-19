@@ -27,3 +27,7 @@ Example docker-compose setup:
   volumes:
    - "./_persistence/postgresnotifier_dev/logs:/logs"
 ```
+
+# Production
+
+This image is used in production at [Sportsbook software](https://www.sportsbooksoftware.com) and [white label sportsbook](https://www.whitelabelsportsbook.com) to broadcast changes to sports market data to several thousand concurrent users. The sports market data tables are watched using triggers and creates/updates/deletes are broadcast by this service through a LISTEN/NOTIFY pattern and Socketcluster service integrated with our sports and e-gaming frontends.
