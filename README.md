@@ -15,10 +15,15 @@ Example docker-compose setup:
   container_name: postgresnotifier_dev
   environment:
    DATABASE_URL: "postgres://${USERNAME}:${PASSWORD}@postgres:5432/development_database"
-   SOCKETCLUSTER_NUM_CONNECTIONS: 10
+   WS_NUM_CONNECTIONS: 10
    TABLES: "table1,table2,table3"
+   # for SocketCluster
    SOCKETCLUSTER_PORT: 9500
    SOCKETCLUSTER_HOST: socketcluster
+   # for MQTT
+   MQTT_BROKER: wss://example:com:1883/mqtt
+   MQTT_USERNAME: whatever
+   MQTT_PASSWORD: however
    USE_SSL: 1
   restart: "on-failure"
   depends_on:
